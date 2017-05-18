@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ChartJS - LineGraph</title>
+		<style>
+			.chart-container {
+				width: 800px;
+				height: auto;
+			}
+                         #s2 {
+  color:white;
+  background-color: #1f3d7a;
+height:50px;
+width:120px;
+margin-top:3%;
+margin-left:75%;
+font-size:20px;
+}
+header {
+   padding: 0.5em;
+    color: white;
+    background-color: #1f3d7a;
+    clear: left;
+     text-align: center;
+}
+header h1{
+padding: 1em;
+}
+
+body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding:70px 0px 0px 0px;
+    width: 18%;
+    background-color: #1f3d7a;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+
+		</style>
+	</head>
+	<body>
+<header>
+<img src="paceofficiallogo.jpg" height="150" width="18%" style="float:left;margin-left:0px;padding:0px;">
+   <h1 >Assignments</h1>
+</header>
+ <ul>
+    <li><a href="home.html">HOME</a></li>
+    <li><a href="announcement.html">ANNOUNCEMENT</a></li>
+    <li><a href="syllabus.html">SYLLABUS</a></li>
+    <li><a href="course.html">COURSE SCHEDULE</a></li>
+    <li><a href="quizes.html">QUIZES</a></li>
+    <li><a href="discussion.html">DISCUSSION BOARD</a></li>
+  </ul>
+
+<div style="margin-left:25%;padding:1px 16px;">
+		<div class="chart-container">
+			<canvas id="mycanvas"></canvas>
+		</div>
+		<a href="assignments.html"><button id="s2">back</button></a>
+</div>
+		<!-- javascript -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/Chart.min.js"></script>
+		<script type="text/javascript" src="js/linegraph.js"></script>
+	</body>
+</html>
