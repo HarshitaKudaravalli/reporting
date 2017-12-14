@@ -1,6 +1,8 @@
 
 <?php
 header('Content-Type: application/json');
+$a = (int)$_POST['a'];
+
 //database
 define('DB_HOST', 'localhost');
 define('DB_USERNAME', 'portal-db');
@@ -12,7 +14,7 @@ if(!$mysqli){
 	die("Connection failed: " . $mysqli->error);
 }
 //query to get data from the table
-$query = sprintf("SELECT userID,present_classes FROM attendance ");
+$query = sprintf("SELECT userID,grade FROM assignment_grade where assignmentID='$a' ");
 //execute query
 $result = $mysqli->query($query);
 //loop through the returned data
@@ -26,4 +28,5 @@ $result->close();
 $mysqli->close();
 //now print the data
 print json_encode($data);
+//header("Location: http://localhost/Student/reporting/bargraph1.php");
 ?>

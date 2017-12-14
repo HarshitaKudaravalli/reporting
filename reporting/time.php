@@ -34,27 +34,27 @@ th, td {
 }
 
 tr:nth-child(even){background-color: #f2f2f2}
-
 </style>
+
 </head>
-<body>
-  <!--<a id='head-links' href='bargraph.php'>Graph</a>-->
+<vody>
+
   <a id='head-links' href='index.php'>back</a>
-<form method='post' action='attendance_report.php'>
+<form method='post' action='time_report.php'>
 <input type='submit' name='export_excel' id='head-links' value='Download Report'>
 
 </form>
+  <h2> Amount of time spent by students on web-site </h2>
 <?php
-$result= mysqli_query($conn,"select * from attendance order by present_classes ASC");
+$result= mysqli_query($conn,"select user, SUM(activity) DIV 60 AS 'time' from sessions GROUP BY user ORDER BY time");
 
 if ($result->num_rows > 0) {
      // output data of each row
 echo"<table align='center'>";
-echo"<tr><td class='ta1'><b> Student ID </b></td> <td class='ta1'><b> Present Classes</b> </td>";
-echo" <td class='ta1'><b> Marks </b></td></tr> ";
+echo"<tr><td class='ta1'><b> Student ID </b></td> <td class='ta1'><b> Time(in min) </b> </td>";
      while($row = $result->fetch_assoc()) {
 
-         echo  "<tr><td class='ta1'> ". $row["userID"]. " </td><td class='ta1'> ". $row["present_classes"]. "</td><td class='ta1'> " . $row["grades"] . "</td></tr>";
+         echo  "<tr><td class='ta1'> ". $row["user"]. "</td><td class='ta1'> " . $row["time"] . "</td></tr>";
      }
 		 echo"</table>";
 	 }
